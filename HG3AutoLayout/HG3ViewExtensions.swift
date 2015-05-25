@@ -20,3 +20,8 @@ extension UIView {
         view.layoutIfNeeded()
     }
 }
+
+public class HG3Framework {
+    public init() {
+    }
+}
