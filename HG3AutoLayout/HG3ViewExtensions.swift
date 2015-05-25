@@ -9,10 +9,9 @@
 import Foundation
 
 public extension UIView {
-    func newAutoLayoutObject() -> UIView {
-        var view = UIView()
-        view.setTranslatesAutoresizingMaskIntoConstraints(false)
-        return view
+    convenience init(isAutoLayoutView: Bool) {
+        self.init()
+        self.setTranslatesAutoresizingMaskIntoConstraints(false)
     }
     
     func updateLayoutForView(view: UIView) {
