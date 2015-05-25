@@ -10,6 +10,7 @@
 		9055A23B1B129F97000EB6A7 /* HG3AutoLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 9055A23A1B129F97000EB6A7 /* HG3AutoLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9055A2411B129F97000EB6A7 /* HG3AutoLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9055A2351B129F97000EB6A7 /* HG3AutoLayout.framework */; };
 		9055A2481B129F97000EB6A7 /* HG3AutoLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9055A2471B129F97000EB6A7 /* HG3AutoLayoutTests.swift */; };
+		9055A2521B12A010000EB6A7 /* HG3ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9055A2511B12A010000EB6A7 /* HG3ViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		9055A2401B129F97000EB6A7 /* HG3AutoLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HG3AutoLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9055A2461B129F97000EB6A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9055A2471B129F97000EB6A7 /* HG3AutoLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HG3AutoLayoutTests.swift; sourceTree = "<group>"; };
+		9055A2511B12A010000EB6A7 /* HG3ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HG3ViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				9055A23A1B129F97000EB6A7 /* HG3AutoLayout.h */,
 				9055A2381B129F97000EB6A7 /* Supporting Files */,
+				9055A2511B12A010000EB6A7 /* HG3ViewExtensions.swift */,
 			);
 			path = HG3AutoLayout;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9055A2521B12A010000EB6A7 /* HG3ViewExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +327,7 @@
 		9055A24C1B129F97000EB6A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -332,12 +337,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		9055A24D1B129F97000EB6A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
