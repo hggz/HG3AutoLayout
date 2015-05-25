@@ -19,3 +19,11 @@ public extension UIView {
         view.layoutIfNeeded()
     }
 }
+
+public extension UIButton {
+     class func autoLayoutButtonWithType(buttonType: UIButtonType) -> UIButton {
+        var button = self.buttonWithType(buttonType) as! UIButton
+        button.setTranslatesAutoresizingMaskIntoConstraints(false)
+        return button
+    }
+}
