@@ -46,31 +46,55 @@ public extension UIButton {
 
 public extension NSLayoutConstraint {
     //MARK: Class Functions
-    class func widthConstraintForItem(item: AnyObject, width: CGFloat) -> NSLayoutConstraint {
+    class func widthConstraintForItem(item: UIView, width: CGFloat) -> NSLayoutConstraint {
         var widthConstraint = NSLayoutConstraint(item: item, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: width)
         return widthConstraint
     }
     
-    class func heightConstraintForItem(item: AnyObject, height: CGFloat) -> NSLayoutConstraint {
+    class func heightConstraintForItem(item: UIView, height: CGFloat) -> NSLayoutConstraint {
         var heightConstraint = NSLayoutConstraint(item: item, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: height)
         return heightConstraint
     }
     
-    class func sizeConstraintsForItem(item: AnyObject, width: CGFloat, height: CGFloat) -> [NSLayoutConstraint] {
+    class func sizeConstraintsForItem(item: UIView, width: CGFloat, height: CGFloat) -> [NSLayoutConstraint] {
         return [widthConstraintForItem(item, width: width), heightConstraintForItem(item, height: height)]
     }
     
-    class func equalWidthConstraintForItems(item1: AnyObject, item2: AnyObject) -> NSLayoutConstraint {
+    class func equalWidthConstraintForItems(item1: UIView, item2: UIView) -> NSLayoutConstraint {
         var widthConstraint = NSLayoutConstraint(item: item1, attribute: .Width, relatedBy: .Equal, toItem: item2, attribute: .Width, multiplier: 1.0, constant: 0)
         return widthConstraint
     }
     
-    class func equalHeightConstraintForItems(item1: AnyObject, item2: AnyObject) -> NSLayoutConstraint {
+    class func equalHeightConstraintForItems(item1: UIView, item2: UIView) -> NSLayoutConstraint {
         var heightConstraint = NSLayoutConstraint(item: item1, attribute: .Height, relatedBy: .Equal, toItem: item2, attribute: .Height, multiplier: 1.0, constant: 0)
         return heightConstraint
     }
     
-    class func equalSizeConstraintForItems(item1: AnyObject, item2: AnyObject) -> [NSLayoutConstraint] {
+    class func equalSizeConstraintForItems(item1: UIView, item2: UIView) -> [NSLayoutConstraint] {
         return [equalWidthConstraintForItems(item1, item2: item2), equalHeightConstraintForItems(item1, item2: item2)]
+    }
+    
+    class func centerViewY(view: UIView, containerView: UIView) -> NSLayoutConstraint {
+        var yConstraint = NSLayoutConstraint(item: containerView, attribute: .CenterY, relatedBy: .Equal, toItem: view, attribute: .CenterY, multiplier: 1.0, constant: 0)
+        return yConstraint
+    }
+    
+    class func centerViewX(view: UIView, containerView: UIView) -> NSLayoutConstraint {
+        var xConstraint = NSLayoutConstraint(item: containerView, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1.0, constant: 0)
+        return xConstraint
+    }
+    
+    class func centerViewXY(view: UIView, containerView: UIView) -> [NSLayoutConstraint] {
+        return [centerViewX(view, containerView: containerView), centerViewY(view, containerView: containerView)]
+    }
+    
+    class func trailingConstraintToSV(view: UIView, containerView: UIView, constant: CGFloat) -> NSLayoutConstraint {
+        var trailingConstraint = NSLayoutConstraint(item: containerView, attribute: .Trailing, relatedBy: .Equal, toItem: view, attribute: .Trailing , multiplier: 1.0, constant: constant)
+        return trailingConstraint
+    }
+    
+    class func leadingConstraintToSV(view: UIView, containerView: UIView, constant: CGFloat) -> NSLayoutConstraint {
+        var leadingConstraint = NSLayoutConstraint(item: view, attribute: .Leading, relatedBy: .Equal, toItem: containerView, attribute: .Leading , multiplier: 1.0, constant: constant)
+        return leadingConstraint
     }
 }
