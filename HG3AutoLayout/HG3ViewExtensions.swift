@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension UIView {
+public extension UIView {
     func newAutoLayoutObject() -> UIView {
         var view = UIView()
         view.setTranslatesAutoresizingMaskIntoConstraints(false)
