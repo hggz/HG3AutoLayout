@@ -24,4 +24,8 @@ extension UIView {
 public class HG3Framework {
     public init() {
     }
+    
+    public func doSomethingFun() {
+        println("Hey")
+    }
 }
